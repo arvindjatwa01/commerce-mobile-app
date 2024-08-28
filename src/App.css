@@ -1,0 +1,14 @@
+.main-menu {
+  background: #ffffff;
+  border-right: 1px solid #eeeeee;
+  position: fixed;
+  top: 81px;
+  bottom: 0;
+  /* height: 100%; */
+  left: 0;
+  width: 60px;
+  overflow: hidden;
+  transition: width 0.05s linear;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  z-index: 1000;
+}
