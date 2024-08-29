@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Home as HomeIcon, Info as InfoIcon, ContactMail as ContactMailIcon } from "@mui/icons-material";
+
 import { Link } from "react-router-dom";
 
 function Sidebar({ isOpen }) {
