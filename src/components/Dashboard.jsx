@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import { Outlet } from "react-router-dom";
+
 import Header from "./common/Header";
 import Sidebar from "./common/Sidebar";
 
@@ -11,15 +13,6 @@ const Dashboard = () => {
   };
   return (
     <>
-      {/* <div className="h-screen overflow-hidden">
-        <Sidebar isOpen={isSidebarOpen} />
-        <div className="ml-64">
-        <Header toggleSidebar={toggleSidebar} />
-        <div className="h-[calc(100vh-4rem)] overflow-y-auto p-4">
-        <Outlet />
-        </div>
-        </div>
-        </div> */}
       <div className="flex h-screen overflow-hidden">
         <Sidebar isOpen={isSidebarOpen} />
         <div className="flex-1">

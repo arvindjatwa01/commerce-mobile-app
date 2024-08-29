@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 
-import $ from "jquery";
 import SearchIcon from "@mui/icons-material/Search";
+import CachedIcon from "@mui/icons-material/Cached";
 
-import PartsCard from "./parts-master/PartsCard";
-import { callGetApi } from "../api/ApiCaller";
-import { API_SUCCESS } from "../api/ResponseCode";
-import { DATA_SVC_PARTS_MASTER } from "../api/ApiConstants";
+import { Tooltip } from "@mui/material";
+
+import $ from "jquery";
 import SelectFilter from "react-select";
-import { FONT_STYLE_SELECT, partsSearchOptions, SELECT_CUSTOM_STYLES } from "./common/constents";
+
+import { callGetApi } from "api/ApiCaller";
+import { API_SUCCESS } from "api/ResponseCode";
+import { partsSearch } from "api/searchServices";
+import { DATA_SVC_PARTS_MASTER } from "api/ApiConstants";
+
 import CustomizedSnackbar from "./common/CustomSnackBar";
-import { partsSearch } from "../api/searchServices";
+import PartsCard from "./parts-master/PartsCard";
+import { partsSearchOptions, SELECT_CUSTOM_STYLES } from "./common/constents";
 
 const HomeScreen = () => {
   const [partsRecord, setPartsRecord] = useState([]);
@@ -84,7 +89,7 @@ const HomeScreen = () => {
     setQuerySearchSelector([...tempArray]);
   };
 
-  //
+  // input seaarch
   const handleInputSearch = (e, i) => {
     let tempArray = [...querySearchSelector];
     let obj = tempArray[i];
@@ -119,7 +124,7 @@ const HomeScreen = () => {
     $(`.scrollbar-${id}`).css("display", "none");
   };
 
-  // click on search button
+  // click on search button|icon
   const handleQuerySearchClick = async () => {
     $(".scrollbar").css("display", "none");
     var searchStr = "";
@@ -209,6 +214,15 @@ const HomeScreen = () => {
             <button className="bg-purple-600 text-white px-4 py-2 rounded hidden sm:block h-full" onClick={handleQuerySearchClick}>
               Search
             </button>
+            <div
+              className="h-11 w-11 absolute translate-x-1 top-0 left-0 flex justify-center items-center bg-yellow-500 rounded-full text-white sm:hidden"
+              style={{ transform: "translate(15%, -65%)" }}
+              onClick={handleQuerySearchClick}
+            >
+              <Tooltip title="Reset">
+                <CachedIcon className="h-full" />
+              </Tooltip>
+            </div>
           </div>
         </div>
 

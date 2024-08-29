@@ -1,8 +1,11 @@
 import React from "react";
+
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+
 import { Tooltip } from "@mui/material";
-import NumberSpinner from "../number-spineer/NumberSpinner";
-import { currencyFormatter } from "../../utils/currencyFormatter";
+
+import NumberSpinner from "components/number-spineer/NumberSpinner";
+import { currencyFormatter } from "utils/currencyFormatter";
 
 const PartsCard = ({ partItem }) => {
   return (
@@ -26,11 +29,6 @@ const PartsCard = ({ partItem }) => {
         </div>
         <div className="w-full flex justify-between items-center mt-2 px-3 gap-2">
           <NumberSpinner qnt={1} />
-          {/* <div className="flex items-center border-1 bg-gray-300 border-gray-300 px-2 rounded">
-            <button className="text-base bg-purple-700">-</button>
-            <input type="number" readOnly value={1} className="w-10 mx-2 text-center border-2 border-gray-300 rounded" />
-            <button className="text-base bg-purple-700">+</button>
-          </div> */}
           <Tooltip title={"Add to Cart"}>
             <button className="bg-yellow-500 text-white rounded p-1 text-base">
               <AddShoppingCartIcon className="text-sm" size="large" />

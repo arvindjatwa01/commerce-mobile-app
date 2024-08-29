@@ -1,7 +1,9 @@
 import React from "react";
+
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import { Link } from "react-router-dom";
 
 function Header({ toggleSidebar }) {
